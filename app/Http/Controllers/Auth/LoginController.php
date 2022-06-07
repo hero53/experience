@@ -13,4 +13,14 @@ class LoginController extends Controller
   {
     return view('auth.login');
   }
+
+  public function getRegister()
+  {
+    return view('auth.register');
+  }
+
+  public function getProfile()
+  {
+    return view('auth.profile');
+  }
 }

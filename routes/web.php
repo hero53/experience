@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('auth')->group(function () {
-    Route::get('/login', [LoginController::class, 'getLogin']);
+Route::group(['prefix' => '/auth'], function () {
+    Route::get('/login', [LoginController::class, 'getLogin'])->name('get-login');
+    Route::get('/register', [LoginController::class, 'getRegister'])->name('get-register');
+    Route::get('/profile', [LoginController::class, 'getProfile'])->name('get-profile');
 });
